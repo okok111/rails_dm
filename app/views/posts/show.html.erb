@@ -1,0 +1,16 @@
+<h1>posts#show</h1>
+    <div class="post-show">
+        <p><%= @post.title %></p>
+            <p>
+                <% if @post.image.present? %>
+                    <%= image_tag @post.image_url, size: '250x200'%>
+                <% else %>
+                    <%= image_tag "noimage.png", size: '250x200' %>
+                <% end %>
+            </p>
+        <p><%= @post.contents %></p>
+        <p><%= @post.created_at %></p>
+    </div>
+    
+<%= link_to "編集する", edit_post_path(@post.id) %>
+<%= link_to "post一覧に戻る", posts_path %>

@@ -1,0 +1,17 @@
+<h1>posts#new</h1>
+<div class="newall">
+    <%= form_for @post do |f| %>
+        <div class="post-new">
+            <p><%= f.label :title %></p>
+            <p><%= f.text_field :title, :size => 50 %></p>
+            <p><%= f.label :image %></p>
+            <p><%= f.file_field :image %></p>
+            <p><%= f.label :contents %></p>
+            <p><%= f.text_field :contents, :size => 50 %></p>
+        </div>
+        <%= f.submit "postする" %>
+    <% end %>
+</div>
+<%= link_to "post一覧に戻る", posts_path %>
+
+
